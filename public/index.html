@@ -24,10 +24,14 @@
 
         socket.emit('mensaje', { nombre: 'Federico' } );
 
-        socket.on('mensaje', function( payload ){
+        socket.on('nuevo-mensaje', function( payload ){
             console.log('Escuhando:', payload );
         });
 
+        socket.on('active-bands', function( bands ){
+            console.clear();
+            console.table( bands );
+        });
 
     </script>
 
